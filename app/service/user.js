@@ -8,7 +8,7 @@ class UserService extends Service {
       return {
         code: 2000,
         data: false,
-        message: '该用户名已被使用！'
+        message: '该用户名已经注册！'
       }
     }
     const result = await ctx.model.User.create({
