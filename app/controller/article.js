@@ -1,6 +1,6 @@
 const Controller = require('egg').Controller
 
-class UserController extends Controller {
+class ArticleController extends Controller {
   async add () {
     const { ctx } = this
     const { userName, nickName, passWord } = ctx.request.body
@@ -13,4 +13,4 @@ class UserController extends Controller {
   }
 }
 
-module.exports = UserController
+module.exports = ArticleController
