@@ -21,6 +21,21 @@ module.exports = app => {
     isPublish: {
       type: Number,
       required: true
+    },
+    //分类
+    type: {
+      type: String,
+      required: false
+    },
+    //封面图
+    coverImage: {
+      type: Number,
+      required: false
+    },
+    //是否首页轮播
+    isCarousel: {
+      type: Number,
+      required: false
     }
   })
   return mongoose.model('ArticleList', ArticleListSchema, 'articleList')

@@ -1,8 +1,8 @@
-const whiteList = ['/api/getArticleList']
+const whiteList = ['/api/getUseInfo']
 
 module.exports = options => {
   return async function (ctx, next) {
-    if (whiteList.includes(ctx.request.url)) {
+    if (!whiteList.includes(ctx.request.url)) {
       await next()
       return
     }
