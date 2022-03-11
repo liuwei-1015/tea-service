@@ -1,19 +1,27 @@
 module.exports = app => {
   const mongoose = app.mongoose
   const Schema = mongoose.Schema
-  const ArticleSchema = new Schema({
+  const ArticleListSchema = new Schema({
+    //文章标题
     title: {
       type: String,
       required: true
     },
-    id: {
+    //发布时间
+    publishTime: {
       type: String,
       required: true
     },
-    publish_time: {
-      type: String,
+    //浏览人数
+    visitors: {
+      type: Number,
+      required: true
+    },
+    //是否发布
+    isPublish: {
+      type: Number,
       required: true
     }
   })
-  return mongoose.model('Article', ArticleSchema, 'article')
+  return mongoose.model('ArticleList', ArticleListSchema, 'articleList')
 }

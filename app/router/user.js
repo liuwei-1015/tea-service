@@ -2,8 +2,8 @@
 
 module.exports = app => {
   const { router, controller, middleware, config } = app
+  //注册
   router.post('/api/userRegistration', controller.user.add)
-  // const jwt = middleware.jwt(config.jwt)
-  // router.get('/api/login', jwt, controller.user.get)
-  router.get('/api/login', controller.user.get)
+  //登录
+  router.get('/api/login', middleware.jwt(config.jwt), controller.user.get)
 }

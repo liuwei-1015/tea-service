@@ -1,15 +1,10 @@
 const Controller = require('egg').Controller
 
 class ArticleController extends Controller {
-  async add () {
+  //文章列表
+  async getArticleList () {
     const { ctx } = this
-    const { userName, nickName, passWord } = ctx.request.body
-    ctx.body = await ctx.service.user.add(userName, nickName, passWord)
-  }
-  async get () {
-    const { ctx } = this
-    const { userName, passWord } = ctx.request.query
-    ctx.body = await ctx.service.user.get(userName, passWord)
+    ctx.body = await ctx.service.article.getList()
   }
 }
 

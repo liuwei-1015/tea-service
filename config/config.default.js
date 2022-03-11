@@ -31,7 +31,7 @@ module.exports = appInfo => {
     secret: 'lw',
     enable: true
   }
-  
+
   return {
     ...config
   }

@@ -26,15 +26,15 @@ class UserService extends Service {
     }
   }
   async get (userName, passWord) {
-    const { ctx } = this
+    const { ctx, app } = this
     const result = await ctx.model.User.find({user_name: userName})
     if (result.length) {
       const pw = result[0].pass_word
       if (pw === passWord) {
-        const token = ctx.app.jwt.sign({
+        const token = app.jwt.sign({
           userName: userName,
           passWord: passWord
-        }, this.app.config.jwt.secret, {
+        }, app.config.jwt.secret, {
           expiresIn: '60m', // 时间根据自己定，具体可参考jsonwebtoken插件官方说明
         })
         return {
